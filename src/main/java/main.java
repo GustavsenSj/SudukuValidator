@@ -108,22 +108,17 @@ public class main {
      * @throws InterruptedException the interrupted exception
      */
     public static void main(String[] args) throws InterruptedException, FileNotFoundException {
-        String path = "src/main/resources/sudoku.csv";
-
         Thread thread = new Thread(() -> {
             try {
                 FileDialog dialog = new FileDialog((Frame)null, "Select File to Open");
                 dialog.setMode(FileDialog.LOAD);
                 dialog.setVisible(true);
                 String file = dialog.getDirectory();
-                s = scanner(file + dialog.getFile());
+                String absoluteFilePath = file + dialog.getFile();
+                s = scanner(absoluteFilePath);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
-
-
-
-
         });
 
 
