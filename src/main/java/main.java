@@ -69,7 +69,6 @@ public class main {
                         if (s[row + pos % 3][col + pos / 3] == s[row + pos2 % 3][col + pos2 / 3]) {
                             gridCheck = false;
                             System.out.println("Sudoku bord not valid. Error in grid: " + gridNumber );
-                            //todo return the string and print it out in a 4th thred. can be multiple strings string with new line
                         }
                     }
                 }
