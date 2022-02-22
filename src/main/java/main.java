@@ -1,5 +1,6 @@
 
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
@@ -110,10 +111,12 @@ public class main {
         String path = "src/main/resources/sudoku.csv";
 
         Thread thread = new Thread(() -> {
-
-            //todo user input path
             try {
-                s = scanner(path);
+                FileDialog dialog = new FileDialog((Frame)null, "Select File to Open");
+                dialog.setMode(FileDialog.LOAD);
+                dialog.setVisible(true);
+                String file = dialog.getDirectory();
+                s = scanner(file + dialog.getFile());
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
@@ -154,9 +157,6 @@ public class main {
         t2.join();
         t3.join();
 
-//        System.out.println(rowCheck + "row");
-//        System.out.println(columnChecker + "column");
-//        System.out.println(gridCheck + "grid");
         if (rowCheck && columnChecker && gridCheck) {
             System.out.println("valid");
         } else {
