@@ -1,5 +1,5 @@
-## SudukuValidator
-# Instructions
+# SudukuValidator
+## Instructions
   - Open the application
   - Run the main method
   - Choose the csv file you want to check
